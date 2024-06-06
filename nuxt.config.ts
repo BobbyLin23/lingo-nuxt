@@ -11,4 +11,11 @@ export default defineNuxtConfig({
       Poppins: [400, 500, 600, 700],
     },
   },
+  components: [
+    '~/components',
+    {
+      path: '~/components/marketing',
+      pathPrefix: false,
+    },
+  ],
 })
