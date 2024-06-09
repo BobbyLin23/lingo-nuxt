@@ -21,9 +21,9 @@ import { Loader } from 'lucide-vue-next'
             <UserButton after-sign-out-url="/" />
           </SignedIn>
           <SignedOut>
-            <SignInButton mode="modal" fallback-redirect-url="/learn">
+            <SignInButton mode="modal" after-sign-in-url="/learn">
               <Button size="lg" variant="ghost">
-                LOGIN
+                login
               </Button>
             </SignInButton>
           </SignedOut>

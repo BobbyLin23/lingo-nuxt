@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { UserButton } from 'vue-clerk'
-
 definePageMeta({
   middleware: ['auth'],
   layout: 'main',
@@ -8,10 +6,23 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    Learn
-    <ClientOnly>
-      <UserButton after-sign-out-url="/" />
-    </ClientOnly>
+  <div class="flex flex-row-reverse gap-[48px] px-6">
+    <StickyWrapper>
+      <UserProgress
+        :active-course="{
+          title: 'Spanish',
+          imageSrc: '/es.svg',
+        }"
+        :hearts="5"
+        :points="5"
+        :has-active-subscription="false"
+      />
+    </StickyWrapper>
+    <FeedWrapper>
+      <LearnHeader title="Spanish" />
+      <div class="space-y-4">
+        TODO
+      </div>
+    </FeedWrapper>
   </div>
 </template>
