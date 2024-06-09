@@ -5,6 +5,6 @@ export default defineNuxtRouteMiddleware(() => {
   if (import.meta.server && userId)
     return navigateTo('/')
 
-  if (import.meta.client && nuxtApp.$clerk.user)
+  if (import.meta.client && !nuxtApp.$clerk.user)
     return navigateTo('/')
 })

@@ -16,7 +16,7 @@ definePageMeta({
       <h1 class="text-xl lg:text-3xl font-bold text-neutral-600 max-w-[400px] text-center">
         Learn, pratice, and master new languages with lingo.
       </h1>
-      <ClientOnly>
+      <ClientOnly class="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
         <ClerkLoading>
           <Loader class="h-5 w-5 text-muted-foreground animate-spin" />
         </ClerkLoading>

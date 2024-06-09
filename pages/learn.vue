@@ -3,6 +3,7 @@ import { UserButton } from 'vue-clerk'
 
 definePageMeta({
   middleware: ['auth'],
+  layout: 'main',
 })
 </script>
 

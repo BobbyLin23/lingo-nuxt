@@ -11,4 +11,8 @@
 * {
   font-family: 'Poppins';
 }
+
+html, body, #__nuxt {
+  height: 100%;
+}
 </style>
