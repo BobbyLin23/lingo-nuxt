@@ -27,6 +27,10 @@ export default defineNuxtConfig({
       path: '~/components/learn',
       prefix: 'Learn',
     },
+    {
+      path: '~/components/courses',
+      prefix: 'Course',
+    },
   ],
   runtimeConfig: {
     public: {
