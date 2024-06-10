@@ -1,15 +1,14 @@
 <script lang="ts" setup>
+import type { courses, userProgress } from '~/db/schema'
+
 definePageMeta({
   layout: 'main',
 })
 
-const data = [
-  {
-    id: 1,
-    title: 'Spanish',
-    imageSrc: '/es.svg',
-  },
-]
+const { data: coursesData } = useFetch<typeof courses.$inferSelect[]>('/api/courses')
+const { data: userProgressData } = useFetch<typeof userProgress.$inferSelect>('/api/user-progress')
+
+await Promise.all([coursesData, userProgressData])
 </script>
 
 <template>
@@ -17,6 +16,6 @@ const data = [
     <h1 class="text-2xl font-bold text-neutral-700">
       Language Courses
     </h1>
-    <CourseList :courses="data" :active-course-id="1" />
+    <CourseList :courses="coursesData!" :active-course-id="userProgressData?.activeCourseId" />
   </div>
 </template>

@@ -1,10 +1,42 @@
 <script lang="ts" setup>
-import type { courses } from '~/db/schema'
+import { toast } from 'vue-sonner'
+import type { courses, userProgress } from '~/db/schema'
 
-defineProps<{
+const props = defineProps<{
   courses: typeof courses.$inferSelect[]
-  activeCourseId: number
+  activeCourseId?: typeof userProgress.$inferSelect.activeCourseId
 }>()
+
+const loading = ref(false)
+
+const router = useRouter()
+
+async function onClick(id: number) {
+  if (loading.value)
+    return
+
+  if (id === props.activeCourseId) {
+    router.push('/learn')
+    return
+  }
+
+  try {
+    loading.value = true
+
+    await $fetch('/api/user-progress', {
+      method: 'patch',
+      body: {
+        courseId: id,
+      },
+    })
+  }
+  catch (e) {
+    toast.error('Something went wrong, please try again later')
+  }
+  finally {
+    loading.value = false
+  }
+}
 </script>
 
 <template>
@@ -17,7 +49,7 @@ defineProps<{
       :image-src="course.imageSrc"
       :disabled="false"
       :active="course.id === activeCourseId"
-      @click="() => {}"
+      @click="onClick(course.id)"
     />
   </div>
 </template>

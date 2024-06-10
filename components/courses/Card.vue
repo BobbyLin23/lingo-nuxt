@@ -17,7 +17,7 @@ defineProps<{
                disabled && 'pointer-events-none opacity-50')"
   >
     <div class="min-h-[24px] w-full flex items-center justify-end">
-      <div v-if="active" class="rounded-md bg-gray-600 flex items-center justify-center p-1.5">
+      <div v-if="active" class="rounded-md bg-green-600 flex items-center justify-center p-1.5">
         <Check class="text-white stroke-[4] h-4 w-4" />
       </div>
     </div>

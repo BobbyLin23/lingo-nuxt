@@ -25,11 +25,13 @@
     "postgres": "^3.4.4",
     "radix-vue": "^1.8.3",
     "shadcn-nuxt": "latest",
+    "superjson": "^2.2.1",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.27",
     "vue-clerk": "^0.4.0",
-    "vue-router": "^4.3.2"
+    "vue-router": "^4.3.2",
+    "vue-sonner": "^1.1.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.20.0",

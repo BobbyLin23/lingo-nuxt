@@ -1,8 +1,8 @@
 import { db } from '~/db/drizzle'
 import { courses } from '~/db/schema'
 
-export async function getCourses() {
+export default defineEventHandler(async () => {
   const data = await db.select().from(courses)
 
-  return data
-}
+  return JSON.parse(JSON.stringify(data)) as typeof data
+})

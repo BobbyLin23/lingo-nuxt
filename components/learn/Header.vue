@@ -2,7 +2,7 @@
 import { ArrowLeft } from 'lucide-vue-next'
 
 defineProps<{
-  title: string
+  title?: string
 }>()
 </script>
 

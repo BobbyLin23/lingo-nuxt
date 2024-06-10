@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import { InfinityIcon } from 'lucide-vue-next'
+import type { courses } from '~/db/schema'
 
 defineProps<{
-  activeCourse: {
-    imageSrc: string
-    title: string
-  }
-  hearts: number
-  points: number
+  activeCourse?: typeof courses.$inferSelect | null
+  hearts?: number
+  points?: number
   hasActiveSubscription: boolean
 }>()
 </script>
@@ -17,8 +15,8 @@ defineProps<{
     <NuxtLink href="/courses">
       <Button variant="ghost">
         <NuxtImg
-          :src="activeCourse.imageSrc"
-          :alt="activeCourse.title"
+          :src="activeCourse?.imageSrc"
+          :alt="activeCourse?.title"
           class="rounded-md border"
           height="32"
           width="32"
