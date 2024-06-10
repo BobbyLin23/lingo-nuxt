@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "db:studio": "bunx drizzle-kit studio",
+    "db:push": "bunx drizzle-kit push"
   },
   "dependencies": {
     "@clerk/clerk-js": "^5.6.0",
@@ -15,10 +17,12 @@
     "@nuxtjs/google-fonts": "latest",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.31.2",
     "h3": "^1.11.1",
     "h3-clerk": "^0.4.4",
     "lucide-vue-next": "^0.387.0",
     "nuxt": "^3.11.2",
+    "postgres": "^3.4.4",
     "radix-vue": "^1.8.3",
     "shadcn-nuxt": "latest",
     "tailwind-merge": "^2.3.0",
@@ -30,6 +34,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.20.0",
     "@nuxtjs/tailwindcss": "^6.12.0",
-    "eslint": "^9.4.0"
+    "drizzle-kit": "^0.22.6",
+    "eslint": "^9.4.0",
+    "pg": "^8.12.0"
   }
 }

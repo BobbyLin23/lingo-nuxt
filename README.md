@@ -26,3 +26,20 @@
 8. Page Wrapper
 9. DB & Drizzle ORM
 10. Course Page
+11. User Progress
+12. Seed Script
+13. Schema
+14. Units
+15. Lesson Button
+16. Course Progress
+17. Exit Modal
+18. Challenge Cards
+19. Challenge Footer
+20. Challenge Actions
+21. Challenge Finish Screen
+22. Challenge Practice
+23. Shop
+24. Stripe
+25. Details
+26. Admin
+27. Deployment
