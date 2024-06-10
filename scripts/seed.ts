@@ -118,6 +118,27 @@ async function main() {
       },
     ])
 
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 2, // "the man"?
+        correct: true,
+        text: "el hombre",
+        audioSrc: "/es_man.mp3",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "la mujer",
+        audioSrc: "/es_woman.mp3",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "el robot",
+        audioSrc: "/es_robot.mp3",
+      },
+    ]);
+
     console.log('Seeding finished')
   }
   catch (error) {

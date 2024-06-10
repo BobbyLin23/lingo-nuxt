@@ -1,5 +1,5 @@
 import { relations } from 'drizzle-orm'
-import { integer, pgEnum, pgTable, serial, text } from 'drizzle-orm/pg-core'
+import { boolean, integer, pgEnum, pgTable, serial, text } from 'drizzle-orm/pg-core'
 
 export const courses = pgTable('courses', {
   id: serial('id').primaryKey(),
@@ -44,9 +44,9 @@ export const challengeOptions = pgTable('challenge_options', {
     onDelete: 'cascade',
   }).notNull(),
   text: text('text').notNull(),
-  correct: text('correct').notNull(),
-  imageSrc: text('image_src').notNull(),
-  audioSrc: text('audio_src').notNull(),
+  correct: boolean('correct').notNull(),
+  imageSrc: text('image_src'),
+  audioSrc: text('audio_src'),
 })
 
 export const challengeProgress = pgTable('challenge_progress', {
@@ -55,7 +55,7 @@ export const challengeProgress = pgTable('challenge_progress', {
   challengeId: integer('challenge_id').references(() => challenges.id, {
     onDelete: 'cascade',
   }),
-  completed: text('completed').notNull().default('false'),
+  completed: boolean('completed').notNull().default(false),
 })
 
 export const userProgress = pgTable('user_progress', {
