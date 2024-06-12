@@ -8,7 +8,10 @@ export default defineEventHandler(async (event) => {
   const { userId } = getAuth(event)
 
   if (!userId) {
-    throw new Response('Unauthorized', { status: 401 })
+    throw createError({
+      statusMessage: 'User not authenticated',
+      statusCode: 401,
+    })
   }
 
   const data = await db.query.userProgress.findFirst({

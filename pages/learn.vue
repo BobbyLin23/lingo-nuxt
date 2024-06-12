@@ -9,8 +9,11 @@ definePageMeta({
 const { data: userProgressData } = useFetch('/api/user-progress', {
   method: 'get',
 })
+const { data: unitsData } = useFetch('/api/units', {
+  method: 'get',
+})
 
-await Promise.all([userProgressData])
+await Promise.all([userProgressData, unitsData])
 
 if (!userProgressData.value || !userProgressData.value.activeCourseId) {
   navigateTo('/courses')
