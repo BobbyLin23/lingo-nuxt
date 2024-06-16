@@ -15,7 +15,7 @@ const { data: unitsData } = useFetch('/api/units', {
 
 await Promise.all([userProgressData, unitsData])
 
-if (!userProgressData.value || !userProgressData.value.activeCourseId) {
+if (!userProgressData.value || !userProgressData.value.activeCourse) {
   navigateTo('/courses')
 }
 </script>
@@ -32,8 +32,16 @@ if (!userProgressData.value || !userProgressData.value.activeCourseId) {
     </StickyWrapper>
     <FeedWrapper>
       <LearnHeader :title="userProgressData?.activeCourse?.title" />
-      <div class="space-y-4">
-        TODO
+      <div v-for="unit in unitsData" :key="unit.id" class="mb-10">
+        <LearnUnit
+          :id="unit.id"
+          :order="unit.order"
+          :description="unit.description"
+          :title="unit.title"
+          :lessons="unit.lessons"
+          :active-lesson="undefined"
+          :active-lesson-percentage="0"
+        />
       </div>
     </FeedWrapper>
   </div>
